@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для Лизы 💛 | Лучшая подруга</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6e0d25 0%, #8b1a3a 50%, #5a0820 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 245, 224, 0.95);
+            border-radius: 40px;
+            padding: 45px 35px;
+            max-width: 550px;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            animation: fadeInUp 0.8s ease;
+            border: 2px solid #6e0d25;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart {
+            font-size: 90px;
+            cursor: pointer;
+            display: inline-block;
+            animation: floatHeart 3s infinite;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .heart:hover {
+            transform: scale(1.1);
+        }
+
+        .heart.clicked {
+            animation: heartbeat 0.4s ease;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            color: #6e0d25;
+            margin: 20px 0 10px;
+            font-size: 2.2em;
+        }
+
+        .years-box {
+            background: #6e0d25;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin: 15px 0;
+        }
+
+        .years {
+            color: #fff5e0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .story {
+            background: #fff5e0;
+            padding: 25px;
+            border-radius: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #6e0d25;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(110,13,37,0.1);
+        }
+
+        .story p {
+            color: #4a0520;
+            font-size: 0.95em;
+            margin: 12px 0;
+            line-height: 1.5;
+        }
+
+        .story .quote {
+            font-style: italic;
+            color: #6e0d25;
+            text-align: center;
+            margin: 15px 0;
+            font-weight: bold;
+            border-top: 1px solid #f0c0a0;
+            border-bottom: 1px solid #f0c0a0;
+            padding: 10px 0;
+        }
+
+        .message {
+            color: #6e0d25;
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .button {
+            background: #6e0d25;
+            color: #fff5e0;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin: 15px 0;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(110,13,37,0.3);
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            background: #8b1a3a;
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff5e0;
+            border-radius: 20px;
+            color: #6e0d25;
+            font-size: 1.05em;
+            line-height: 1.6;
+            border: 2px solid #6e0d25;
+        }
+
+        .hidden-message.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 0.8em;
+            color: #a06070;
+        }
+
+        .small-hearts {
+            font-size: 20px;
+            letter-spacing: 5px;
+            margin: 15px 0;
+            color: #6e0d25;
+        }
+
+        .classmates {
+            font-size: 14px;
+            color: #6e0d25;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="heart" id="heart">💛</div>
+        
+        <h1>Для Лизы 💕</h1>
+        
+        <div class="years-box">
+            <span class="years" id="yearsCounter">Наша дружба</span>
+        </div>
+        
+        <div class="story">
+            <p>🏫 Всё началось в конце 2-го класса...</p>
+            <p>📚 9 лет вместе — школа, перемены, слёзы, смех, тайны и мечты.</p>
+            <p>🎓 Закончили 9 классов — и вот мы уже на 1-м курсе!</p>
+            <p>🏛️ Мы учимся в разных колледжах, но это не мешает нам общаться и видеться.</p>
+            <div class="quote">«Настоящая дружба не знает расстояний и времени»</div>
+            <p>💪 Мы пережили столько всего вместе... И я точно знаю: мы будем дружить ещё больше!</p>
+        </div>
+        
+        <div class="message">
+            Лиза, ты — моя самая родная душа.<br>
+            Спасибо тебе за всё, что мы прошли вместе 💫
+        </div>
+        
+        <button class="button" id="surpriseBtn">🌟 Нажми для сюрприза 🌟</button>
+        
+        <div class="hidden-message" id="surpriseMessage">
+            💖 Лизанька!<br><br>
+            Спасибо тебе за 9 лет настоящей дружбы. Ты была рядом и в радости, и в трудные моменты.<br>
+            Я так рада, что судьба свела нас с тобой в том самом 2-м классе!<br><br>
+            Даже если мы в разных колледжах — наши сердца всегда рядом. Я знаю, что могу на тебя положиться, а ты на меня.<br>
+            🌸 <strong>Ты лучшая подруга, о которой можно только мечтать!</strong> 🌸<br><br>
+            Пусть у нас впереди ещё много совместных воспоминаний, приключений и счастливых моментов!<br><br>
+            Обнимаю тебя крепко-крепко! 🫂💛
+        </div>
+        
+        <div class="small-hearts">
+            💛 💕 💖 💗 💛
+        </div>
+        
+        <div class="classmates">
+            🏫 2-й класс → 1-й курс колледжа ⭐
+        </div>
+        
+        <div class="footer">
+            Наша дружба навсегда 🤍
+        </div>
+    </div>
+
+    <script>
+        const heart = document.getElementById('heart');
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const surpriseMessage = document.getElementById('surpriseMessage');
+
+        // Анимация сердечка
+        heart.addEventListener('click', function() {
+            this.classList.add('clicked');
+            setTimeout(() => {
+                this.classList.remove('clicked');
+            }, 400);
+            
+            const originalText = this.textContent;
+            this.textContent = '💖';
+            setTimeout(() => {
+                this.textContent = originalText;
+            }, 400);
+        });
+
+        // Кнопка сюрприза
+        surpriseBtn.addEventListener('click', function() {
+            surpriseMessage.classList.toggle('show');
+            if (surpriseMessage.classList.contains('show')) {
+                this.textContent = '✨ Спрятать сюрприз ✨';
+            } else {
+                this.textContent = '🌟 Нажми для сюрприза 🌟';
+            }
+        });
+
+        // Счётчик лет дружбы (начиная с конца 2-го класса, примерно 8 лет назад)
+        const currentYear = new Date().getFullYear();
+        const startYear = 2017; // Примерно конец 2-го класса (можно подставить свой год)
+        const years = currentYear - startYear;
+        
+        function getYearsWord(y) {
+            if (y % 10 === 1 && y % 100 !== 11) return 'год';
+            if (y % 10 >= 2 && y % 10 <= 4 && (y % 100 < 10 || y % 100 >= 20)) return 'года';
+            return 'лет';
+        }
+        
+        document.getElementById('yearsCounter').innerHTML = years + ' ' + getYearsWord(years) + ' нашей дружбы! 🎉';
+    </script>
+</body>
+</html>
